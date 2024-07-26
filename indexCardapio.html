@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verona Milani</title>
+    <link rel="stylesheet" type="text/css" href="styleCardapio.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header><h3 class="titulo">Verona Milani</h3><img class="logoHeader" src="img/logoSemFundo.png"></header>
+    <main>
+        <h1 class="titulo">Bem-Vindo</h1>
+
+        <h2 class="subTitulo">Cardapio</h2>
+        <div class="cardapio">
+            <table>
+                <tbody>
+                    <tr class="linhaCalabresa">
+                        <th><img class="fotoCardapio" src="img/calabresa.png"></th>
+                        <th><p class="pizzaSubTitulo">Calabresa com Mussarela</p></th>
+                        <th><p class="valorCardapio" id="valorCalabresaMussarela">R$30</p></th>
+                    </tr>
+                    <tr class="linhaQuatroQueijos">
+                        <th><img class="fotoCardapio" src="img/quatroQueijo.png"></th>
+                        <th><p class="pizzaSubTitulo">4 Queijos</p></th>
+                        <th><p class="valorCardapio" id="valorQuatroQueijos">R$35</p></th>
+                    </tr>
+                    <tr class="linhaFrangoCatupiry">
+                        <th><img class="fotoCardapio" src="img/frangoCatupiry.png"></th>
+                        <th><p class="pizzaSubTitulo">Frango com Catupiry</p></th>
+                        <th><p class="valorCardapio" id="valorFrangoCatupiry">R$25</p></th>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        
+        <h2 id="subTituloPedidoCadastro">Fassa Seu pedido</h2>
+        <form id="areaCadastro">
+            
+
+            <label class="subTituloCadastro" id="subTituloNome">Nome:</label>
+            <input class="inputCadastro" id="inputNome" type="text"/>
+
+            <label class="subTituloCadastro" id="subTituloCPF">CPF:</label>
+            <input class="inputCadastro" type="number" id="inputCPF">
+
+            <label class="subTituloCadastro" id="subTituloSabor">Sabor:</label>
+            <select class="inputCadastro" id="inputSabor">
+                <option value="0">Escolha seu sabor</option>
+                <option value="1">Calabresa Com Mussarela</option>
+                <option value="2">Quatro Queijos</option>
+                <option value="3">Frango com catupiry</option>
+            </select>
+            
+            <button id="cadastro" onclick="botaoCadastro()">Cadastro</button>
+            <p id="msgConcluindo"></p>
+        </form>
+       
+        <h2 class="subTitulo">Valor total dos Pedidos</h2>
+        <h2 id="valorTotal">R$0</h2>
+
+
+        <h2 class="subTitulo">Seus pedidos</h2>
+        <div class="areaPedidos">
+            <table id="tabelaPedidos">
+                <tbody id="tabelaPedido">
+
+                </tbody>
+            </table>
+          
+        </div>
+    </main>
+    <footer>
+       <p>Cristian Ferreira © 2024</p> 
+       <a id="linkFeedBack" href="https://forms.office.com/r/VUAPhsz5UJ" target="_blank">FeedBack</a>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
