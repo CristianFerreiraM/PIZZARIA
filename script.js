@@ -16,7 +16,7 @@ function somaValorDefineClass(){
     let quatroQueijos = parseInt(document.getElementById('valorQuatroQueijos').textContent.split('R$')[1])
     let frangoCatupiry = parseInt(document.getElementById('valorFrangoCatupiry').textContent.split('R$')[1])
 
-  let sabor = document.getElementById("inputSabor")
+    let sabor = document.getElementById("inputSabor")
     let sabores = sabor.options[sabor.selectedIndex]
 
     switch(sabores.value){
@@ -54,7 +54,7 @@ function criaTr(itemUm, itemDois, itemTres){
 //funções validações
 function validaVazio(valida){
     let nome = document.getElementById("inputNome")
-
+    let form = document.getElementById("areaCadastro")
   
     if(valida != ''){
         nome.classList.remove('inputCadastroErro')
@@ -64,7 +64,9 @@ function validaVazio(valida){
     }else{
         nome.classList.remove('inputCadastro')
         nome.classList.add('inputCadastroErro')
-
+        exibirTextoNaTela('#msgConcluindo', '')
+        exibirTextoNaTela('.msgErro', '')
+        exibirTextoNaTela('.msgErro', 'insira seu nome')
      
     }
 }
@@ -78,6 +80,9 @@ function validaCpf(validaCpf){
     }else{
         cpf.classList.remove('inputCadastro')
         cpf.classList.add('inputCadastroErro')
+        exibirTextoNaTela('#msgConcluindo', '')
+        exibirTextoNaTela('.msgErro', '')
+        exibirTextoNaTela('.msgErro', 'CPF invalido')
         
     }
 }
@@ -92,6 +97,9 @@ function validaSabor(validaSabor){
         sabor.classList.remove('inputCadastro')
         sabor.classList.add('inputCadastroErro')
         
+        exibirTextoNaTela('#msgConcluindo', '')
+        exibirTextoNaTela('.msgErro', '')
+        exibirTextoNaTela('.msgErro', 'Escolha seu sabor')
     }
 }
 
@@ -104,16 +112,6 @@ function botaoCadastro(){
     let sabor = document.getElementById("inputSabor")
     let sabores = sabor.options[sabor.selectedIndex]
 
-    /* validaVazio(nome)
-    validaCpf(cpf)
-    validaSabor(sabores.value) */
-
-   
-
-/*     const nomeValido = validaVazio(nome);
-    const cpfValido = validaCpf(cpf);
-    const saboresValidos = validaSabor(sabores.value); */
-    
     if (validaVazio(nome) && validaCpf(cpf) && validaSabor(sabores.value)) {         
 
         somaValorDefineClass()
@@ -124,19 +122,6 @@ function botaoCadastro(){
         exibirTextoNaTela('#msgConcluindo', 'Pedido realizado com sucesso')
         form.reset()
 
-    } else {
-        const erroMsg = validaVazio(nome) ? (validaCpf(cpf) ? "Escolha sua pizza" : "CPF inválido") : "Nome inválido";
-        let classe = document.querySelector('.msgErro')
-        console.log(classe)
-        
-        if(classe != erroMsg){
-            let elemento = document.createElement("p")
-            elemento.classList.add('msgErro');
-            form.appendChild(elemento)
-            elemento.innerHTML = erroMsg
-             exibirTextoNaTela("#msgConcluindo", "");
-        }
     }
-
 }
 
