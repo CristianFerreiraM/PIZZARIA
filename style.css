@@ -25,13 +25,12 @@ header{
 .titulo{
     font-size: 40px;
     margin:0px;
-    margin-top: 28px;
-    margin-bottom: 27px;
+    margin: 0px;
 }
 
-.logoHeader{
-    height: 135px;
-    width: 120px;
+.logo{
+    height: 175px;
+    width: 160px;
     margin: 0px;
 }
 
