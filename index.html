@@ -14,11 +14,23 @@
 <body>
     <header><h3 class="titulo">Bem-vindo</h3></header>
     <main>
-        <img class="logo" src="img/logoSemFundo.png"></header>
-        <h1 class="titulo">Verona Milani</h1> 
 
-        <h2 class="subTitulo">Cardapio</h2>
-        <div class="cardapio">
+        <section id="zonaTarefa">
+           
+            <div id="listaTarefas">
+                <p>Complete as Tarefas:</p>
+                <p id="checkNome">Nome</p>
+                <p id="checkCpf">CPF</p>
+                <p id="checkSabor">Sabor</p>
+            </div>
+        </section>
+
+        <section id="principalMain">
+            <img class="logo" src="img/logoSemFundo.png"></header>
+            <h1 class="titulo">Verona Milani</h1> 
+
+            <h2 class="subTitulo">Cardapio</h2>
+            <div class="cardapio">
             <table>
                 <tbody>
                     <tr class="linhaCalabresa">
@@ -39,10 +51,10 @@
                 </tbody>
             </table>
 
-        </div>
+            </div>
         
-        <h2 id="subTituloPedidoCadastro">Fassa Seu pedido</h2>
-        <form id="areaCadastro">
+            <h2 id="subTituloPedidoCadastro">Fassa Seu pedido</h2>
+            <form id="areaCadastro">
             
 
             <label class="subTituloCadastro" id="subTituloNome">Nome:</label>
@@ -61,14 +73,14 @@
             
             <button id="cadastro" onclick="botaoCadastro()">Cadastro</button>
             <p id="msgConcluindo"></p> <p class="msgErro"></p> 
-        </form>
+            </form>
        
-        <h2 class="subTitulo">Valor total dos Pedidos</h2>
-        <h2 id="valorTotal">R$0</h2>
+            <h2 class="subTitulo">Valor total dos Pedidos</h2>
+            <h2 id="valorTotal">R$0</h2>
 
 
-        <h2 class="subTitulo">Seus pedidos</h2>
-        <div class="areaPedidos">
+            <h2 class="subTitulo">Seus pedidos</h2>
+            <div class="areaPedidos">
             <table id="tabelaPedidos">
                 <tbody id="tabelaPedido">
 
@@ -76,6 +88,8 @@
             </table>
           
         </div>
+    </section>
+
     </main>
     <footer>
        <p>Cristian Ferreira © 2024</p> 
