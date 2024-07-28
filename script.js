@@ -54,15 +54,18 @@ function criaTr(itemUm, itemDois, itemTres){
 //funções validações
 function validaVazio(valida){
     let nome = document.getElementById("inputNome")
-    let form = document.getElementById("areaCadastro")
+    let checkNome = document.getElementById("checkNome")
   
     if(valida != ''){
         nome.classList.remove('inputCadastroErro')
         nome.classList.add('inputCadastro')
-
+        checkNome.classList.add('checklistCompleta')
+        checkNome.innerHTML="Nome ✔"
         return true
     }else{
         nome.classList.remove('inputCadastro')
+        checkNome.classList.remove('checklistCompleta')
+        checkNome.innerHTML = "Nome"
         nome.classList.add('inputCadastroErro')
         exibirTextoNaTela('#msgConcluindo', '')
         exibirTextoNaTela('.msgErro', '')
@@ -73,12 +76,18 @@ function validaVazio(valida){
 
 function validaCpf(validaCpf){
     let cpf = document.getElementById("inputCPF")
+    let checkCpf = document.getElementById("checkCpf")
+
     if(validaCpf.length == 11){
         cpf.classList.remove('inputCadastroErro')
         cpf.classList.add('inputCadastro')
+        checkCpf.classList.add('checklistCompleta')
+        checkCpf.innerHTML="CPF ✔"
         return true
     }else{
         cpf.classList.remove('inputCadastro')
+        checkCpf.classList.remove('checklistCompleta')
+        checkCpf.innerHTML = 'CPF'
         cpf.classList.add('inputCadastroErro')
         exibirTextoNaTela('#msgConcluindo', '')
         exibirTextoNaTela('.msgErro', '')
@@ -89,14 +98,21 @@ function validaCpf(validaCpf){
 
 function validaSabor(validaSabor){
     let sabor = document.getElementById("inputSabor")
+    let checkSabor = document.getElementById("checkSabor")
+
     if (validaSabor != 0){
         sabor.classList.remove('inputCadastroErro')
         sabor.classList.add('inputCadastro')
+        checkSabor.classList.add('checklistCompleta')
+        checkSabor.innerHTML="Sabor ✔"
         return true
     }else{
         sabor.classList.remove('inputCadastro')
         sabor.classList.add('inputCadastroErro')
+        checkSabor.classList.remove('inputCadastro')
+        checkSabor.innerHTML = "Sabor"
         
+
         exibirTextoNaTela('#msgConcluindo', '')
         exibirTextoNaTela('.msgErro', '')
         exibirTextoNaTela('.msgErro', 'Escolha seu sabor')
